@@ -17,7 +17,7 @@ struct ContentView: View {
             HStack {
                 Button("Increment") {
                     vm.increment()
-            }
+                }
                 Text("\(vm.counter)")
                     .bold()
                     .foregroundColor(.gray)
