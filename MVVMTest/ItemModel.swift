@@ -14,3 +14,4 @@ struct Item: Identifiable, Codable {
     
     static var exampleItem = Item(name: "Xbox", description: "Sample description")
 }
+                    

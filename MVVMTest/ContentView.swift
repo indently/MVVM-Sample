@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ViewModel()
+    @StateObject private var vm = ViewModel()
     
     var body: some View {
         VStack {
-            Toggle("Toggle Switch", isOn: $viewModel.isTurnedOn)
+            Toggle("Toggle Switch", isOn: $vm.isTurnedOn)
                 .padding()
             HStack {
                 Button("Increment") {
-                    viewModel.increment()
+                    vm.increment()
             }
-                Text("\(viewModel.counter)")
+                Text("\(vm.counter)")
                     .bold()
                     .foregroundColor(.gray)
                     .padding()
             }
-            List(viewModel.itemList) { item in
+            List(vm.itemList) { item in
                 HStack {
                     Text(item.name)
                     Spacer()
@@ -33,7 +33,7 @@ struct ContentView: View {
             .listStyle(.plain)
             .background(.thinMaterial)
             Button("Add item") {
-                viewModel.addItem()
+                vm.addItem()
             }
             .padding()
         }
